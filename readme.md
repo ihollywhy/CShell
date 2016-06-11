@@ -1,0 +1,10 @@
+### a shell like program using c
+the function include base command like
+- ls
+- rm
+- pwd
+and a buildin command "cd"
+#### the command "cd" has problem:
+
+if we don't use the exit() for the parent process, the function "chdir" wouldn't make effect
+if we use the exit() for the parent process, there is another problem: it need exit for several times to quit.
