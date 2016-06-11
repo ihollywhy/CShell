@@ -30,23 +30,29 @@ int main()
     while(!myexit)				//loop forever unless the myexit is true;
     {
     	PrintPrompt();				//print prompt for user each loop
-        GetCommand();
+                GetCommand();
      
         if(strcasecmp(command, "exit") == 0)	//compare the command with "exit"
-	{
+        {
             return 0;				//set the myexit to true
-	}
-    	
+        }	
+        if(strcasecmp(command, "cd") == 0)
+        {
+                cd();
+        }
+        else
+        {
     	pid_t ischild;
     	ischild = fork();
     	if(ischild != 0)
     	{
             waitpid(ischild, &status, 0);
-        }
-        else
-        {
-	       exec();
-        } 
+                    }
+                    else
+                    {
+            	       exec();
+                    } 
+            }
     }
     return 0;
 }

@@ -22,17 +22,8 @@ void exec(void)
 	}
        	else 
 	{		
-		if(!strcasecmp(command, "cd"))
-		{
-			printf("cd command\n");
-			cd();
-		}		
-		else 
-		{
-			if(execvp(command, argv) == -1 )
-				printf("%s: COMMAND NOT FOUND!\n", command);
-			exit(0);
-		}
-		//exit(0);
+		if(execvp(command, argv) == -1 )
+			printf("%s: COMMAND NOT FOUND!\n", command);
+		exit(0);
 	}	
 }

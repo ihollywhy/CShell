@@ -9,3 +9,5 @@ char path[max_path];
 //for func
 int PrintPrompt(void);
 int GetCommand(void);
+void cd(void);
+void exec(void);
