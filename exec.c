@@ -7,10 +7,10 @@
 //For interest cd func
 void cd(void)
 {
-	getcwd(path, sizeof(path));
-	strcat(path, "/");
-	strcat(path, argv[1]);
-	if(chdir(path) ==  0)
+	//getcwd(path, sizeof(path));
+	//strcat(path, "/");
+	//strcat(path, argv[1]);
+	if(chdir(*(argv+1)) ==  -1)
 		perror("chdir");
 }
 
